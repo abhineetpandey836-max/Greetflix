@@ -18,7 +18,7 @@ body {
 
 nav {
   background: #191233;
-  color: white;
+  color:red;
   padding: 0.9rem 2rem;
   display: flex;
   justify-content: space-between;
