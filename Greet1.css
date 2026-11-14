@@ -1,0 +1,293 @@
+/* Colors & Base */
+:root {
+  --main: #6a1b9a;
+  --bg: #f8f5f0;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  background: var(--bg);
+  color: #333;
+}
+
+nav {
+  background: #191233;
+  color:red;
+  padding: 0.9rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav .brand strong {
+  display: block;
+  font: 1.35rem "Yatra One", Georgia, serif;
+  color: #ffb74d;
+}
+
+nav .brand span {
+  font-size: 0.82rem;
+  color: #ccc;
+  font-style: italic;
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+nav .nav-links a:hover {
+  color: #ffb74d;
+}
+
+header {
+  text-align: center;
+  color: white;
+  padding: 3.2rem 1rem 4.8rem;
+  background: linear-gradient(135deg, #1f1442 0%, #5e2066 55%, #d85c27 100%);
+}
+
+header h1 {
+  margin: 0 0 0.6rem;
+  font: 2.3rem "Yatra One", Georgia, serif;
+}
+
+header p {
+  margin: 0 auto;
+  max-width: 520px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #f3e8ff;
+}
+
+main {
+  max-width: 540px;
+  margin: -3.2rem auto 2rem;
+  padding: 0 1rem;
+}
+
+.box, form {
+  background: white;
+  padding: 1.4rem;
+  margin-bottom: 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--main);
+}
+
+select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid var(--main);
+  border-radius: 10px;
+  background: white;
+  color: #333;
+}
+
+.empty {
+  text-align: center;
+  border: 2px dashed #bbb;
+  box-shadow: none;
+}
+
+form {
+  display: none;
+  border-top: 6px solid var(--c);
+}
+
+.saved-page form {
+  border-top: 0;
+  padding: 0.6rem;
+}
+
+body:has(option:checked:not([disabled])) .empty {
+  display: none;
+}
+
+h2 {
+  margin: 0 0 0.8rem;
+  font: 1.5rem "Yatra One", Georgia, serif;
+  color: var(--c);
+}
+
+/* Card Face */
+.face {
+  position: relative;
+  padding: 2.6rem 1.2rem 2.2rem;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  background: linear-gradient(135deg, var(--c), #7b1fa2);
+}
+
+.deco {
+  position: absolute;
+  font-size: 1.8rem;
+}
+.d1 { top: 10px; left: 14px; }
+.d2 { top: 10px; right: 14px; }
+.d3 { bottom: 10px; right: 14px; }
+
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font: 1.15rem/1.65 "Nunito Sans", Georgia, serif;
+  text-align: center;
+  color: white;
+  background: transparent;
+  border: 0;
+  resize: none;
+}
+
+textarea:focus {
+  outline: 1px dashed rgba(255, 255, 255, 0.6);
+}
+
+.about {
+  margin: 1rem 0.4rem 0;
+  padding: 0.8rem 1rem;
+  background: #faf7fd;
+  border-left: 4px solid var(--c);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.save-btn {
+  display: block;
+  width: 100%;
+  margin: 1rem 0 0;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: var(--c);
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.share-section {
+  margin: 1rem 0.4rem 0.4rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid #eee;
+}
+
+.share-title {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.share-buttons button {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.84rem;
+  font-weight: bold;
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-wa { background: #25D366; }
+.btn-x  { background: #14171A; }
+.btn-fb { background: #1877F2; }
+.btn-ig { background: #E1306C; }
+.btn-sc { background: #FFFC00; color: #111 !important; }
+
+.share-buttons button:hover {
+  opacity: 0.88;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+@media print {
+  nav, header, .box, .about, .share-section, .save-btn, footer {
+    display: none;
+  }
+  form {
+    box-shadow: none;
+  }
+}
+
+/* Show card on greetnav.html via #hash, or default to #holi if no hash */
+form:target {
+  display: block;
+}
+
+.saved-page:not(:has(form:target)) #holi {
+  display: block;
+}
+
+/* Show selected festival on greet.html */
+body:not(.saved-page):has(option[value=custom]:checked) #custom,
+body:not(.saved-page):has(option[value=diwali]:checked) #diwali,
+body:not(.saved-page):has(option[value=holi]:checked) #holi,
+body:not(.saved-page):has(option[value=rakhi]:checked) #rakhi,
+body:not(.saved-page):has(option[value=navratri]:checked) #navratri,
+body:not(.saved-page):has(option[value=dussehra]:checked) #dussehra,
+body:not(.saved-page):has(option[value=janmashtami]:checked) #janmashtami,
+body:not(.saved-page):has(option[value=durga]:checked) #durga,
+body:not(.saved-page):has(option[value=ganesh]:checked) #ganesh,
+body:not(.saved-page):has(option[value=lohri]:checked) #lohri,
+body:not(.saved-page):has(option[value=pongal]:checked) #pongal,
+body:not(.saved-page):has(option[value=onam]:checked) #onam,
+body:not(.saved-page):has(option[value=chhath]:checked) #chhath,
+body:not(.saved-page):has(option[value=eidfitr]:checked) #eidfitr,
+body:not(.saved-page):has(option[value=eidadha]:checked) #eidadha,
+body:not(.saved-page):has(option[value=gurpurab]:checked) #gurpurab,
+body:not(.saved-page):has(option[value=baisakhi]:checked) #baisakhi,
+body:not(.saved-page):has(option[value=buddha]:checked) #buddha,
+body:not(.saved-page):has(option[value=mahavir]:checked) #mahavir,
+body:not(.saved-page):has(option[value=christmas]:checked) #christmas,
+body:not(.saved-page):has(option[value=easter]:checked) #easter,
+body:not(.saved-page):has(option[value=newyear]:checked) #newyear,
+body:not(.saved-page):has(option[value=independence]:checked) #independence,
+body:not(.saved-page):has(option[value=republic]:checked) #republic {
+  display: block;
+}
+
+/* Save Card: same page, so the edited text stays; only the view changes */
+.share-section, .f2 { display: none; }
+
+body:has(#saved:checked) :is(.box, h2, .save-btn, .f1) { display: none; }
+body:has(#saved:checked) :is(.share-section, .f2) { display: block; }
+body:has(#saved:checked) form { border-top: 0; padding: 0.6rem; }
