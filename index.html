@@ -3,491 +3,390 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light">
-<title>Festival Greeting Card Maker</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Yatra+One&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="flix.css">
+<meta name="description" content="Pick a festival, edit the wish and share a warm greeting card with the people you love.">
+<meta name="theme-color" content="#150f24">
+<title>Greetflix | Festival Greeting Card Maker</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎉%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind:wght@400;600&family=Yeseva+One&display=swap">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<input type="checkbox" id="saved" hidden>
+<a class="skip" href="#stage">Skip to card</a>
 
-<nav>
-  <div class="brand">
-    <strong>Greeting Card</strong>
-    <span>A card is small, but the warmth inside it travels far.</span>
-  </div>
-  <div class="nav-links">
-    <a href="index.html">Create Card</a>
-    <a href="greetnav.html#holi">Your Card</a>
-  </div>
-</nav>
-
-<header>
-  <h1>Every festival deserves a warm wish</h1>
-  <p>Choose a festival, write your own message and send a beautiful card to the people you love.</p>
+<header class="top">
+  <a class="logo" href="#">Greetflix</a>
+  <nav aria-label="Main">
+    <a href="#custom">Write your own</a>
+    <a href="#share">Send a card</a>
+  </nav>
 </header>
 
+<section class="hero">
+  <h1>Every festival deserves a warm wish</h1>
+  <p>Pick a festival below, change the words to your own and send the card to the people you love.</p>
+</section>
+
 <main>
-  <div class="box">
-    <label for="festival">1. Choose a festival</label>
-    <select id="festival">
-      <option value="" disabled selected>— Choose a festival —</option>
-      <option value="custom"> Make your own card </option>
-      <optgroup label="Hindu">
-        <option value="diwali">Diwali</option>
-        <option value="holi">Holi</option>
-        <option value="rakhi">Raksha Bandhan</option>
-        <option value="navratri">Navratri</option>
-        <option value="dussehra">Dussehra</option>
-        <option value="janmashtami">Janmashtami</option>
-        <option value="durga">Durga Puja</option>
-        <option value="ganesh">Ganesh Chaturthi</option>
-        <option value="lohri">Lohri</option>
-        <option value="pongal">Pongal</option>
-        <option value="onam">Onam</option>
-        <option value="chhath">Chhath Puja</option>
-      </optgroup>
-      <optgroup label="Muslim">
-        <option value="eidfitr">Eid ul-Fitr</option>
-        <option value="eidadha">Eid ul-Adha</option>
-      </optgroup>
-      <optgroup label="Sikh, Buddhist and Jain">
-        <option value="gurpurab">Guru Nanak Jayanti</option>
-        <option value="baisakhi">Baisakhi</option>
-        <option value="buddha">Buddha Purnima</option>
-        <option value="mahavir">Mahavir Jayanti</option>
-      </optgroup>
-      <optgroup label="Christian">
-        <option value="christmas">Christmas</option>
-        <option value="easter">Easter</option>
-      </optgroup>
-      <optgroup label="National and General">
-        <option value="newyear">New Year</option>
-        <option value="independence">Independence Day</option>
-        <option value="republic">Republic Day</option>
-      </optgroup>
-    </select>
+  <div class="rows">
+    <section aria-labelledby="h-hindu">
+      <h2 id="h-hindu">Hindu</h2>
+      <div class="row">
+        <a class="tile fire" href="#diwali"><span>🪔</span>Diwali</a>
+        <a class="tile bloom" href="#holi"><span>🎨</span>Holi</a>
+        <a class="tile bloom" href="#rakhi"><span>🎀</span>Raksha Bandhan</a>
+        <a class="tile fire" href="#navratri"><span>🔱</span>Navratri</a>
+        <a class="tile fire" href="#dussehra"><span>🏹</span>Dussehra</a>
+        <a class="tile sky" href="#janmashtami"><span>🦚</span>Janmashtami</a>
+        <a class="tile fire" href="#durga"><span>🌺</span>Durga Puja</a>
+        <a class="tile bloom" href="#ganesh"><span>🌼</span>Ganesh Chaturthi</a>
+        <a class="tile fire" href="#lohri"><span>🔥</span>Lohri</a>
+        <a class="tile leaf" href="#pongal"><span>🍯</span>Pongal</a>
+        <a class="tile bloom" href="#onam"><span>🛶</span>Onam</a>
+        <a class="tile gold" href="#chhath"><span>🌅</span>Chhath Puja</a>
+      </div>
+    </section>
+    <section aria-labelledby="h-muslim">
+      <h2 id="h-muslim">Muslim</h2>
+      <div class="row">
+        <a class="tile leaf" href="#eidfitr"><span>🌙</span>Eid ul-Fitr</a>
+        <a class="tile leaf" href="#eidadha"><span>🕌</span>Eid ul-Adha</a>
+      </div>
+    </section>
+    <section aria-labelledby="h-other">
+      <h2 id="h-other">Sikh, Buddhist and Jain</h2>
+      <div class="row">
+        <a class="tile gold" href="#gurpurab"><span>☬</span>Guru Nanak Jayanti</a>
+        <a class="tile leaf" href="#baisakhi"><span>🌾</span>Baisakhi</a>
+        <a class="tile sky" href="#buddha"><span>☸️</span>Buddha Purnima</a>
+        <a class="tile gold" href="#mahavir"><span>🪷</span>Mahavir Jayanti</a>
+      </div>
+    </section>
+    <section aria-labelledby="h-christian">
+      <h2 id="h-christian">Christian</h2>
+      <div class="row">
+        <a class="tile xmas" href="#christmas"><span>🎄</span>Christmas</a>
+        <a class="tile bloom" href="#easter"><span>🐣</span>Easter</a>
+      </div>
+    </section>
+    <section aria-labelledby="h-national">
+      <h2 id="h-national">National and General</h2>
+      <div class="row">
+        <a class="tile sky" href="#newyear"><span>🎆</span>New Year</a>
+        <a class="tile flag" href="#independence"><span>🇮🇳</span>Independence Day</a>
+        <a class="tile flag" href="#republic"><span>🎖️</span>Republic Day</a>
+        <a class="tile bloom" href="#custom"><span>✍️</span>Your own wish</a>
+      </div>
+    </section>
   </div>
 
-  <div class="box empty">
-    <p>🎊</p>
-    <p>Select a festival and your greeting card will appear here.</p>
-  </div>
-
-<form id="custom" action="https://wa.me/" target="_blank" style="--c:#6a1b9a">
-  <h2>Make Your Own Card</h2>
-  <div class="face">
-    <span class="deco d1">🎉</span><span class="deco d2">✨</span><span class="deco d3">🎉</span>
-    <textarea name="text" rows="12" aria-label="Card message">🎉 Your Title Here 🎉
-
-Dear Friend,
-Write your own wish here.
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#custom</textarea>
-  </div>
-  <p class="about"><strong>Your own wish</strong><br>Write any message you like. The card link is in the last line, so it goes along when you share.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="diwali" action="https://wa.me/" target="_blank" style="--c:#f57c00">
-  <h2>Diwali</h2>
-  <div class="face">
-    <span class="deco d1">🪔</span><span class="deco d2">✨</span><span class="deco d3">🪔</span>
-    <textarea name="text" rows="12" aria-label="Card message">🪔 Happy Diwali 🪔
-
-Dear Friend,
-"Wish the divine lights of Diwali bring peace, prosperity,health,and love to your life."
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#diwali</textarea>
-  </div>
-  <p class="about"><strong>Festival of Lights</strong><br>Celebrated in October or November. Homes glow with diyas and rangoli, families share sweets and pray to Goddess Lakshmi. It marks the victory of light over darkness and Lord Rama’s return to Ayodhya.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="holi" action="https://wa.me/" target="_blank" style="--c:#d81b60">
-  <h2>Holi</h2>
-  <div class="face">
-    <span class="deco d1">🎨</span><span class="deco d2">💦</span><span class="deco d3">🎨</span>
-    <textarea name="text" rows="12" aria-label="Card message">🎨 Happy Holi 🎨
-
-Dear Friend,
-“Life is a canvas, and today every colour is welcome.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#holi</textarea>
-  </div>
-  <p class="about"><strong>Festival of Colours</strong><br>Celebrated in March. People play with colours, sing and share sweets to welcome spring. It begins with Holika Dahan, the victory of good over evil.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="rakhi" action="https://wa.me/" target="_blank" style="--c:#c2185b">
-  <h2>Raksha Bandhan</h2>
-  <div class="face">
-    <span class="deco d1">🎀</span><span class="deco d2">💛</span><span class="deco d3">🎀</span>
-    <textarea name="text" rows="12" aria-label="Card message">🎀 Happy Raksha Bandhan 🎀
-
-Dear Brother/Sister,
-“Some bonds need no words, only a thread, a smile and a promise.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#rakhi</textarea>
-  </div>
-  <p class="about"><strong>Bond of Brother and Sister</strong><br>Celebrated in August. Sisters tie a rakhi on their brothers’ wrists, and brothers promise love, care and protection.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="navratri" action="https://wa.me/" target="_blank" style="--c:#e53935">
-  <h2>Navratri</h2>
-  <div class="face">
-    <span class="deco d1">🔱</span><span class="deco d2">🌺</span><span class="deco d3">🔱</span>
-    <textarea name="text" rows="12" aria-label="Card message">🔱 Happy Navratri 🔱
-
-Dear Friend,
-“Faith lights the nine nights, and courage carries you through all the days.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#navratri</textarea>
-  </div>
-  <p class="about"><strong>Nine Nights of the Goddess</strong><br>Nine nights of worship of Goddess Durga, with fasting, garba and dandiya raas in the evenings.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="dussehra" action="https://wa.me/" target="_blank" style="--c:#bf360c">
-  <h2>Dussehra</h2>
-  <div class="face">
-    <span class="deco d1">🏹</span><span class="deco d2">🔥</span><span class="deco d3">🏹</span>
-    <textarea name="text" rows="12" aria-label="Card message">🏹 Happy Dussehra 🏹
-
-Dear Friend,
-“Every Ravan inside us falls when truth and kindness stand tall.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#dussehra</textarea>
-  </div>
-  <p class="about"><strong>Victory of Good over Evil</strong><br>Marks Lord Rama’s victory over Ravana. Effigies of Ravana are burnt on the tenth day after Navratri.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="janmashtami" action="https://wa.me/" target="_blank" style="--c:#1e5aa8">
-  <h2>Janmashtami</h2>
-  <div class="face">
-    <span class="deco d1">🦚</span><span class="deco d2">🪈</span><span class="deco d3">🦚</span>
-    <textarea name="text" rows="12" aria-label="Card message">🦚 Happy Janmashtami 🦚
-
-Dear Friend,
-“Do your best, let go of the rest, and keep smiling like Krishna.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#janmashtami</textarea>
-  </div>
-  <p class="about"><strong>Birth of Lord Krishna</strong><br>Celebrated with fasting, bhajans, midnight prayers and the dahi handi pot-breaking fun.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="durga" action="https://wa.me/" target="_blank" style="--c:#c62828">
-  <h2>Durga Puja</h2>
-  <div class="face">
-    <span class="deco d1">🌺</span><span class="deco d2">🥁</span><span class="deco d3">🌺</span>
-    <textarea name="text" rows="12" aria-label="Card message">🌺 Shubho Durga Puja 🌺
-
-Dear Friend,
-“May Maa Durga give you the strength to face every storm with grace.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#durga</textarea>
-  </div>
-  <p class="about"><strong>Festival of Goddess Durga</strong><br>Most popular in Bengal. Grand pandals, dhak drums, dhunuchi dance and sindoor khela over five days.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="ganesh" action="https://wa.me/" target="_blank" style="--c:#ef6c00">
-  <h2>Ganesh Chaturthi</h2>
-  <div class="face">
-    <span class="deco d1">🌼</span><span class="deco d2">🙏</span><span class="deco d3">🌼</span>
-    <textarea name="text" rows="12" aria-label="Card message">🌼 Ganesh Chaturthi 🌼
-
-Dear Friend,
-“Begin with a prayer, walk with patience, and every obstacle will make way.”
-
-Ganpati Bappa Morya! Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#ganesh</textarea>
-  </div>
-  <p class="about"><strong>Birthday of Lord Ganesha</strong><br>Ganesha idols are welcomed at home for a few days, offered modaks, and then immersed in water with cheers of Ganpati Bappa Morya.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="lohri" action="https://wa.me/" target="_blank" style="--c:#e64a19">
-  <h2>Lohri</h2>
-  <div class="face">
-    <span class="deco d1">🔥</span><span class="deco d2">🍿</span><span class="deco d3">🔥</span>
-    <textarea name="text" rows="12" aria-label="Card message">🔥 Happy Lohri 🔥
-
-Dear Friend,
-“May the Lohri bonfire burn away your worries and warm every heart.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#lohri</textarea>
-  </div>
-  <p class="about"><strong>Winter Harvest Bonfire</strong><br>Celebrated in mid-January, mainly in Punjab. People dance bhangra around a bonfire and offer peanuts, rewri and popcorn.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="pongal" action="https://wa.me/" target="_blank" style="--c:#f57f17">
-  <h2>Pongal</h2>
-  <div class="face">
-    <span class="deco d1">🍯</span><span class="deco d2">🌞</span><span class="deco d3">🌾</span>
-    <textarea name="text" rows="12" aria-label="Card message">🍯 Happy Pongal 🌾
-
-Dear Friend,
-“As the pot overflows, may your home overflow with joy and plenty.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#pongal</textarea>
-  </div>
-  <p class="about"><strong>Tamil Harvest Festival</strong><br>A four-day festival in January. Fresh rice is cooked until the pot overflows, to thank the Sun God and the farmers.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="onam" action="https://wa.me/" target="_blank" style="--c:#2e7d32">
-  <h2>Onam</h2>
-  <div class="face">
-    <span class="deco d1">🌼</span><span class="deco d2">🛶</span><span class="deco d3">🌼</span>
-    <textarea name="text" rows="12" aria-label="Card message">🌼 Happy Onam 🌼
-
-Dear Friend,
-“May the flower carpet at your door bring a year full of colour.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#onam</textarea>
-  </div>
-  <p class="about"><strong>Harvest Festival of Kerala</strong><br>Celebrated with pookalam flower carpets, the grand sadya feast, boat races and folk dances.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="chhath" action="https://wa.me/" target="_blank" style="--c:#ff8f00">
-  <h2>Chhath Puja</h2>
-  <div class="face">
-    <span class="deco d1">🌅</span><span class="deco d2">☀️</span><span class="deco d3">🪔</span>
-    <textarea name="text" rows="12" aria-label="Card message">🌅 Happy Chhath Puja 🪔
-
-Dear Friend,
-“Bowing to the rising sun, may your life glow with health, faith and joy.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#chhath</textarea>
-  </div>
-  <p class="about"><strong>Worship of the Sun God</strong><br>A four-day festival celebrated in October or November, mainly in Bihar, Jharkhand and eastern Uttar Pradesh. Devotees fast and offer arghya to the setting and rising sun at rivers and ponds, thanking Surya Dev and Chhathi Maiya.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="eidfitr" action="https://wa.me/" target="_blank" style="--c:#00796b">
-  <h2>Eid ul-Fitr</h2>
-  <div class="face">
-    <span class="deco d1">🌙</span><span class="deco d2">⭐</span><span class="deco d3">🌙</span>
-    <textarea name="text" rows="12" aria-label="Card message">🌙 Eid Mubarak 🌙
-
-Dear Friend,
-“After a month of patience, may Allah reward you with joy beyond measure.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#eidfitr</textarea>
-  </div>
-  <p class="about"><strong>Festival of Breaking the Fast</strong><br>Marks the end of Ramadan. People offer special prayers, wear new clothes, share sheer khurma and give charity to the needy.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="eidadha" action="https://wa.me/" target="_blank" style="--c:#00695c">
-  <h2>Eid ul-Adha</h2>
-  <div class="face">
-    <span class="deco d1">🕌</span><span class="deco d2">🌙</span><span class="deco d3">🕌</span>
-    <textarea name="text" rows="12" aria-label="Card message">🕌 Eid ul-Adha Mubarak 🕌
-
-Dear Friend,
-“May your sacrifices turn into blessings and your heart stay generous.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#eidadha</textarea>
-  </div>
-  <p class="about"><strong>Festival of Sacrifice</strong><br>Remembers Prophet Ibrahim’s devotion to Allah. Meat is shared with family, friends and the poor.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="gurpurab" action="https://wa.me/" target="_blank" style="--c:#1565c0">
-  <h2>Guru Nanak Jayanti</h2>
-  <div class="face">
-    <span class="deco d1">☬</span><span class="deco d2">🌟</span><span class="deco d3">☬</span>
-    <textarea name="text" rows="12" aria-label="Card message">☬ Guru Nanak Jayanti ☬
-
-Dear Friend,
-“Walk in the light of Guru Nanak: be honest, be kind, serve everyone.”
-
-Waheguru Ji Ka Khalsa. Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#gurpurab</textarea>
-  </div>
-  <p class="about"><strong>Birth of Guru Nanak Dev Ji</strong><br>Celebrated with prabhat pheris, kirtan and langar at gurdwaras. It remembers the teachings of honest work, sharing and equality.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="baisakhi" action="https://wa.me/" target="_blank" style="--c:#ef9a00">
-  <h2>Baisakhi</h2>
-  <div class="face">
-    <span class="deco d1">🌾</span><span class="deco d2">🥁</span><span class="deco d3">🌾</span>
-    <textarea name="text" rows="12" aria-label="Card message">🌾 Happy Baisakhi 🌾
-
-Dear Friend,
-“May golden fields of wheat bring golden days of joy to your family.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#baisakhi</textarea>
-  </div>
-  <p class="about"><strong>Sikh New Year and Harvest</strong><br>Celebrated on 13 or 14 April. It marks the harvest and the founding of the Khalsa in 1699, with bhangra, fairs and gurdwara visits.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="buddha" action="https://wa.me/" target="_blank" style="--c:#ff9800">
-  <h2>Buddha Purnima</h2>
-  <div class="face">
-    <span class="deco d1">☸️</span><span class="deco d2">🕯️</span><span class="deco d3">☸️</span>
-    <textarea name="text" rows="12" aria-label="Card message">☸️ Happy Buddha Purnima ☸️
-
-Dear Friend,
-“Peace comes from within. May you find it in every quiet moment.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#buddha</textarea>
-  </div>
-  <p class="about"><strong>Birth of Gautama Buddha</strong><br>Celebrated on the full moon of Vaishakha with meditation, prayers and acts of kindness.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="mahavir" action="https://wa.me/" target="_blank" style="--c:#8e24aa">
-  <h2>Mahavir Jayanti</h2>
-  <div class="face">
-    <span class="deco d1">🪷</span><span class="deco d2">🕊️</span><span class="deco d3">🪷</span>
-    <textarea name="text" rows="12" aria-label="Card message">🪷 Mahavir Jayanti 🪷
-
-Dear Friend,
-“Live and let live. May kindness be the path you choose each day.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#mahavir</textarea>
-  </div>
-  <p class="about"><strong>Birth of Lord Mahavir</strong><br>A Jain festival of processions and prayers, remembering the teachings of ahimsa (non-violence) and truth.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="christmas" action="https://wa.me/" target="_blank" style="--c:#b71c1c">
-  <h2>Christmas</h2>
-  <div class="face">
-    <span class="deco d1">🎄</span><span class="deco d2">🎁</span><span class="deco d3">❄️</span>
-    <textarea name="text" rows="12" aria-label="Card message">🎄 Merry Christmas ❄️
-
-Dear Friend,
-“May the warmth of Christmas stay in your heart long after the lights fade.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#christmas</textarea>
-  </div>
-  <p class="about"><strong>Birth of Jesus Christ</strong><br>Celebrated on 25 December with church services, carols, the Christmas tree, gifts and a family feast.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="easter" action="https://wa.me/" target="_blank" style="--c:#ab47bc">
-  <h2>Easter</h2>
-  <div class="face">
-    <span class="deco d1">🐣</span><span class="deco d2">🌷</span><span class="deco d3">🐣</span>
-    <textarea name="text" rows="12" aria-label="Card message">🐣 Happy Easter 🐣
-
-Dear Friend,
-“Every ending hides a new beginning. Wishing you hope and a fresh start.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#easter</textarea>
-  </div>
-  <p class="about"><strong>Resurrection of Jesus</strong><br>Celebrated after Good Friday with church services, Easter eggs and family gatherings. It is a symbol of hope and new life.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="newyear" action="https://wa.me/" target="_blank" style="--c:#3949ab">
-  <h2>New Year</h2>
-  <div class="face">
-    <span class="deco d1">🎆</span><span class="deco d2">🎉</span><span class="deco d3">🎇</span>
-    <textarea name="text" rows="12" aria-label="Card message">🎆 Happy New Year 🎇
-
-Dear Friend,
-“A new year is a blank page. Write something you will be proud of.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#newyear</textarea>
-  </div>
-  <p class="about"><strong>First Day of the Year</strong><br>Celebrated on 1 January with countdowns, fireworks, parties and fresh resolutions.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="independence" action="https://wa.me/" target="_blank" style="--c:#e8710a">
-  <h2>Independence Day</h2>
-  <div class="face">
-    <span class="deco d1">🇮🇳</span><span class="deco d2">🕊️</span><span class="deco d3">🇮🇳</span>
-    <textarea name="text" rows="12" aria-label="Card message">🇮🇳 Happy Independence Day 🇮🇳
-
-Dear Friend,
-“Proud of our past, hopeful for our future. Jai Hind!”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#independence</textarea>
-  </div>
-  <p class="about"><strong>15 August 1947</strong><br>The day India became free from British rule. The Prime Minister hoists the flag at the Red Fort and the nation sings with pride.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
-<form id="republic" action="https://wa.me/" target="_blank" style="--c:#138808">
-  <h2>Republic Day</h2>
-  <div class="face">
-    <span class="deco d1">🎖️</span><span class="deco d2">🇮🇳</span><span class="deco d3">🎖️</span>
-    <textarea name="text" rows="12" aria-label="Card message">🎖️ Happy Republic Day 🎖️
-
-Dear Friend,
-“Freedom is a gift, and our Constitution is its promise. Let us keep it alive.”
-
-With love, Your Name
-
-Make your own card: https://greeting-card-maker-with-custom-sha.vercel.app/#republic</textarea>
-  </div>
-  <p class="about"><strong>26 January 1950</strong><br>The day the Constitution of India came into effect. Celebrated with a grand parade on Kartavya Path in Delhi.</p>
-  <label for="saved" class="save-btn">Save Card</label>
-  <div class="share-section"><span class="share-title">Share on:</span><div class="share-buttons"><button class="btn-wa">WhatsApp</button><button class="btn-x" formaction="https://twitter.com/intent/tweet">Post on X</button><button class="btn-fb" formaction="https://www.facebook.com/">Facebook</button><button class="btn-ig" formaction="https://www.instagram.com/">Instagram</button><button class="btn-sc" formaction="https://www.snapchat.com/">Snapchat</button></div></div>
-</form>
+  <section class="stage" id="stage" aria-label="Your greeting card">
+
+    <article class="card bloom" id="custom">
+      <div class="paper">
+        <header><p>🎉✨🎉</p><h3 contenteditable="true">🎉 Your Title Here 🎉</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>Write your own wish here.</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Your own wish</h4><p>Write any message you like. Click the text on the card to change it.</p></aside>
+    </article>
+
+    <article class="card fire" id="diwali">
+      <div class="paper">
+        <header><p>🪔✨🪔</p><h3>🪔 Happy Diwali 🪔</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“Wish the divine lights of Diwali bring peace, prosperity, health, and love to your life.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Festival of Lights</h4><p>Celebrated in October or November. Homes glow with diyas and rangoli, families share sweets and pray to Goddess Lakshmi. It marks the victory of light over darkness and Lord Rama’s return to Ayodhya.</p></aside>
+    </article>
+
+    <article class="card bloom" id="holi">
+      <div class="paper">
+        <header><p>🎨💦🎨</p><h3>🎨 Happy Holi 🎨</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“Life is a canvas, and today every colour is welcome.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Festival of Colours</h4><p>Celebrated in March. People play with colours, sing and share sweets to welcome spring. It begins with Holika Dahan, the victory of good over evil.</p></aside>
+    </article>
+
+    <article class="card bloom" id="rakhi">
+      <div class="paper">
+        <header><p>🎀💛🎀</p><h3>🎀 Happy Raksha Bandhan 🎀</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Brother/Sister,</p>
+          <blockquote>“Some bonds need no words, only a thread, a smile and a promise.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Bond of Brother and Sister</h4><p>Celebrated in August. Sisters tie a rakhi on their brothers’ wrists, and brothers promise love, care and protection.</p></aside>
+    </article>
+
+    <article class="card fire" id="navratri">
+      <div class="paper">
+        <header><p>🔱🌺🔱</p><h3>🔱 Happy Navratri 🔱</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“Faith lights the nine nights, and courage carries you through all the days.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Nine Nights of the Goddess</h4><p>Nine nights of worship of Goddess Durga, with fasting, garba and dandiya raas in the evenings.</p></aside>
+    </article>
+
+    <article class="card fire" id="dussehra">
+      <div class="paper">
+        <header><p>🏹🔥🏹</p><h3>🏹 Happy Dussehra 🏹</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“Every Ravan inside us falls when truth and kindness stand tall.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Victory of Good over Evil</h4><p>Marks Lord Rama’s victory over Ravana. Effigies of Ravana are burnt on the tenth day after Navratri.</p></aside>
+    </article>
+
+    <article class="card sky" id="janmashtami">
+      <div class="paper">
+        <header><p>🦚🪈🦚</p><h3>🦚 Happy Janmashtami 🦚</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“Do your best, let go of the rest, and keep smiling like Krishna.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Birth of Lord Krishna</h4><p>Celebrated with fasting, bhajans, midnight prayers and the dahi handi pot-breaking fun.</p></aside>
+    </article>
+
+    <article class="card fire" id="durga">
+      <div class="paper">
+        <header><p>🌺🥁🌺</p><h3>🌺 Shubho Durga Puja 🌺</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“May Maa Durga give you the strength to face every storm with grace.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Festival of Goddess Durga</h4><p>Most popular in Bengal. Grand pandals, dhak drums, dhunuchi dance and sindoor khela over five days.</p></aside>
+    </article>
+
+    <article class="card bloom" id="ganesh">
+      <div class="paper">
+        <header><p>🌼🙏🌼</p><h3>🌼 Ganesh Chaturthi 🌼</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“Begin with a prayer, walk with patience, and every obstacle will make way.”</blockquote>
+          <p>Ganpati Bappa Morya! Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Birthday of Lord Ganesha</h4><p>Ganesha idols are welcomed at home for a few days, offered modaks, and then immersed in water with cheers of Ganpati Bappa Morya.</p></aside>
+    </article>
+
+    <article class="card fire" id="lohri">
+      <div class="paper">
+        <header><p>🔥🍿🔥</p><h3>🔥 Happy Lohri 🔥</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“May the Lohri bonfire burn away your worries and warm every heart.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Winter Harvest Bonfire</h4><p>Celebrated in mid-January, mainly in Punjab. People dance bhangra around a bonfire and offer peanuts, rewri and popcorn.</p></aside>
+    </article>
+
+    <article class="card leaf" id="pongal">
+      <div class="paper">
+        <header><p>🍯🌞🌾</p><h3>🍯 Happy Pongal 🌾</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“As the pot overflows, may your home overflow with joy and plenty.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Tamil Harvest Festival</h4><p>A four-day festival in January. Fresh rice is cooked until the pot overflows, to thank the Sun God and the farmers.</p></aside>
+    </article>
+
+    <article class="card bloom" id="onam">
+      <div class="paper">
+        <header><p>🌼🛶🌼</p><h3>🌼 Happy Onam 🌼</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“May the flower carpet at your door bring a year full of colour.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Harvest Festival of Kerala</h4><p>Celebrated with pookalam flower carpets, the grand sadya feast, boat races and folk dances.</p></aside>
+    </article>
+
+    <article class="card gold" id="chhath">
+      <div class="paper">
+        <header><p>🌅☀️🪔</p><h3>🌅 Happy Chhath Puja 🪔</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“Bowing to the rising sun, may your life glow with health, faith and joy.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Worship of the Sun God</h4><p>A four-day festival celebrated in October or November, mainly in Bihar, Jharkhand and eastern Uttar Pradesh. Devotees fast and offer arghya to the setting and rising sun at rivers and ponds, thanking Surya Dev and Chhathi Maiya.</p></aside>
+    </article>
+
+    <article class="card leaf" id="eidfitr">
+      <div class="paper">
+        <header><p>🌙⭐🌙</p><h3>🌙 Eid Mubarak 🌙</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“After a month of patience, may Allah reward you with joy beyond measure.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Festival of Breaking the Fast</h4><p>Marks the end of Ramadan. People offer special prayers, wear new clothes, share sheer khurma and give charity to the needy.</p></aside>
+    </article>
+
+    <article class="card leaf" id="eidadha">
+      <div class="paper">
+        <header><p>🕌🌙🕌</p><h3>🕌 Eid ul-Adha Mubarak 🕌</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“May your sacrifices turn into blessings and your heart stay generous.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Festival of Sacrifice</h4><p>Remembers Prophet Ibrahim’s devotion to Allah. Meat is shared with family, friends and the poor.</p></aside>
+    </article>
+
+    <article class="card gold" id="gurpurab">
+      <div class="paper">
+        <header><p>☬🌟☬</p><h3>☬ Guru Nanak Jayanti ☬</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“Walk in the light of Guru Nanak: be honest, be kind, serve everyone.”</blockquote>
+          <p>Waheguru Ji Ka Khalsa. Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Birth of Guru Nanak Dev Ji</h4><p>Celebrated with prabhat pheris, kirtan and langar at gurdwaras. It remembers the teachings of honest work, sharing and equality.</p></aside>
+    </article>
+
+    <article class="card leaf" id="baisakhi">
+      <div class="paper">
+        <header><p>🌾🥁🌾</p><h3>🌾 Happy Baisakhi 🌾</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“May golden fields of wheat bring golden days of joy to your family.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Sikh New Year and Harvest</h4><p>Celebrated on 13 or 14 April. It marks the harvest and the founding of the Khalsa in 1699, with bhangra, fairs and gurdwara visits.</p></aside>
+    </article>
+
+    <article class="card sky" id="buddha">
+      <div class="paper">
+        <header><p>☸️🕯️☸️</p><h3>☸️ Happy Buddha Purnima ☸️</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“Peace comes from within. May you find it in every quiet moment.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Birth of Gautama Buddha</h4><p>Celebrated on the full moon of Vaishakha with meditation, prayers and acts of kindness.</p></aside>
+    </article>
+
+    <article class="card gold" id="mahavir">
+      <div class="paper">
+        <header><p>🪷🕊️🪷</p><h3>🪷 Mahavir Jayanti 🪷</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“Live and let live. May kindness be the path you choose each day.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Birth of Lord Mahavir</h4><p>A Jain festival of processions and prayers, remembering the teachings of ahimsa (non-violence) and truth.</p></aside>
+    </article>
+
+    <article class="card xmas" id="christmas">
+      <div class="paper">
+        <header><p>🎄🎁❄️</p><h3>🎄 Merry Christmas ❄️</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“May the warmth of Christmas stay in your heart long after the lights fade.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Birth of Jesus Christ</h4><p>Celebrated on 25 December with church services, carols, the Christmas tree, gifts and a family feast.</p></aside>
+    </article>
+
+    <article class="card bloom" id="easter">
+      <div class="paper">
+        <header><p>🐣🌷🐣</p><h3>🐣 Happy Easter 🐣</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“Every ending hides a new beginning. Wishing you hope and a fresh start.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>Resurrection of Jesus</h4><p>Celebrated after Good Friday with church services, Easter eggs and family gatherings. It is a symbol of hope and new life.</p></aside>
+    </article>
+
+    <article class="card sky" id="newyear">
+      <div class="paper">
+        <header><p>🎆🎉🎇</p><h3>🎆 Happy New Year 🎇</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“A new year is a blank page. Write something you will be proud of.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>First Day of the Year</h4><p>Celebrated on 1 January with countdowns, fireworks, parties and fresh resolutions.</p></aside>
+    </article>
+
+    <article class="card flag" id="independence">
+      <div class="paper">
+        <header><p>🇮🇳🕊️🇮🇳</p><h3>🇮🇳 Happy Independence Day 🇮🇳</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“Proud of our past, hopeful for our future. Jai Hind!”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>15 August 1947</h4><p>The day India became free from British rule. The Prime Minister hoists the flag at the Red Fort and the nation sings with pride.</p></aside>
+    </article>
+
+    <article class="card flag" id="republic">
+      <div class="paper">
+        <header><p>🎖️🇮🇳🎖️</p><h3>🎖️ Happy Republic Day 🎖️</h3></header>
+        <div class="msg" contenteditable="true" aria-label="Edit your message">
+          <p>Dear Friend,</p>
+          <blockquote>“Freedom is a gift, and our Constitution is its promise. Let us keep it alive.”</blockquote>
+          <p>With love, Your Name</p>
+        </div>
+      </div>
+      <aside><h4>26 January 1950</h4><p>The day the Constitution of India came into effect. Celebrated with a grand parade on Kartavya Path in Delhi.</p></aside>
+    </article>
+
+    <p class="hint"><span>🎊</span>Pick a festival above and your greeting card will appear here.</p>
+  </section>
+
+  <form class="share" id="share" action="https://wa.me/" method="get" target="_blank">
+    <h2>Send your card</h2>
+    <label for="wish">Your message (keep the link so friends can make their own card)</label>
+    <textarea id="wish" name="text" required maxlength="280">Happy festival! 🎉 I made you a card on Greetflix: https://greetflix.vercel.app</textarea>
+    <div class="btns">
+      <button type="submit">Send on WhatsApp</button>
+      <button type="submit" formaction="https://twitter.com/intent/tweet">Post on X</button>
+    </div>
+  </form>
 </main>
 
-<footer>
-  <p class="f1">Customize your message above and click Save Card.</p>
-  <p class="f2">To save the card as a PDF, press Ctrl + P and choose Save as PDF.</p>
+<footer class="foot">
+  <p>Greetflix · Made with HTML5 and CSS3</p>
 </footer>
-
 </body>
 </html>
