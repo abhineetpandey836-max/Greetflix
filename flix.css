@@ -175,6 +175,25 @@ textarea:focus {
   font-size: 0.9rem;
 }
 
+.save-btn {
+  display: block;
+  width: 100%;
+  margin: 1rem 0 0;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: var(--c);
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  opacity: 0.9;
+}
+
 .share-section {
   margin: 1rem 0.4rem 0.4rem;
   padding-top: 0.9rem;
@@ -212,7 +231,6 @@ textarea:focus {
 .btn-fb { background: #1877F2; }
 .btn-ig { background: #E1306C; }
 .btn-sc { background: #FFFC00; color: #111 !important; }
-.btn-ms { background: #0084FF; }
 
 .share-buttons button:hover {
   opacity: 0.88;
@@ -226,7 +244,7 @@ footer {
 }
 
 @media print {
-  nav, header, .box, .about, .share-section, footer {
+  nav, header, .box, .about, .share-section, .save-btn, .edit-btn, footer {
     display: none;
   }
   form {
@@ -269,4 +287,38 @@ body:not(.saved-page):has(option[value=newyear]:checked) #newyear,
 body:not(.saved-page):has(option[value=independence]:checked) #independence,
 body:not(.saved-page):has(option[value=republic]:checked) #republic {
   display: block;
+}
+
+/* Save Card: show the "your card" view (same page, so the edited text stays) */
+.share-section, .edit-btn, .f2 {
+  display: none;
+}
+
+body:has(#saved:checked) .box,
+body:has(#saved:checked) h2,
+body:has(#saved:checked) .save-btn,
+body:has(#saved:checked) .f1 {
+  display: none;
+}
+
+body:has(#saved:checked) .share-section,
+body:has(#saved:checked) .f2 {
+  display: block;
+}
+
+body:has(#saved:checked) .edit-btn {
+  display: block;
+  margin: 0.8rem 0.4rem 0;
+  padding: 0.6rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--c);
+  border: 2px solid var(--c);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+body:has(#saved:checked) form {
+  border-top: 0;
+  padding: 0.6rem;
 }
