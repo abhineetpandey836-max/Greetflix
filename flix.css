@@ -1,3 +1,4 @@
+:root{color-scheme:dark;scrollbar-color:#3a2d58 #000}
 :root{--bg:#150f24;--panel:#221838;--line:#3a2d58;--ink:#f6f1ff;--mute:#b9aed6;--paper:#fffdf8;--text:#2b2140;--red:#ff4d6d;--r:1.25rem}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:5rem}
@@ -55,7 +56,7 @@ main{padding:0 clamp(1rem,5vw,3rem) 3rem}
 .card aside{padding:1.5rem;background:var(--panel);border-radius:var(--r)}
 .card aside h4{font-size:1.25rem;color:var(--a)}
 .card aside p{margin-top:.5rem;color:var(--mute)}
-.card aside::after{content:"Tip: click the message to edit it, then press Ctrl+P and choose Save as PDF.";display:block;margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--mute)}
+.card aside::after{content:"Tip: press Save Card, edit the message, then share it or press Ctrl+P and choose Save as PDF.";display:block;margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--mute)}
 
 /* placeholder is a later sibling, so it hides once any card is targeted */
 .card:target ~ .hint{display:none}
@@ -75,7 +76,7 @@ button{padding:.6rem 1.3rem;font:inherit;font-weight:600;color:#fff;background:v
 button:hover{filter:brightness(1.15);transform:translateY(-2px)}
 button:focus-visible{outline:3px solid #fff}
 
-.foot{padding:2rem 1rem;text-align:center;color:var(--mute);border-top:1px solid var(--line)}
+.foot,.saved-page>footer{padding:2rem 1rem;text-align:center;color:var(--mute);border-top:1px solid var(--line)}
 
 /* responsive */
 @media (max-width:48rem){
@@ -92,4 +93,47 @@ button:focus-visible{outline:3px solid #fff}
   .top,.hero,.rows,.share,.foot,.hint,.card aside{display:none}
   .card:target{display:block}
   .paper{box-shadow:none;border:3px solid var(--a)}
+}
+
+/* Save button */
+.save{display:inline-block;margin-top:1rem;padding:.6rem 1.3rem;font-weight:600;color:#fff;text-decoration:none;text-shadow:0 1px 3px rgba(0,0,0,.4);background:linear-gradient(135deg,var(--a),var(--b));border-radius:2rem;transition:transform .2s,filter .2s}
+.save:hover,.save:focus-visible{transform:translateY(-2px);filter:brightness(1.15);outline:2px solid #fff}
+
+/* social buttons (index + greetnav) */
+.btn-wa{background:#25d366;color:#06361b}
+.btn-x{background:#000;box-shadow:inset 0 0 0 1px #555}
+.btn-fb{background:#1877f2}
+.btn-ig{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888)}
+.btn-sc{background:#fffc00;color:#000}
+.btn-ms{background:#0a7cff}
+
+/* saved-card page (greetnav.html): only the card named in the URL (:target) is shown */
+.saved-page>nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem 1rem;padding:.8rem clamp(1rem,5vw,3rem);background:rgba(21,15,36,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.brand strong{font:1.6rem "Yeseva One",Georgia,serif;color:var(--red)}
+.brand span{display:block;font-size:.8rem;color:var(--mute)}
+.nav-links{display:flex;gap:1.4rem}
+.nav-links a{text-decoration:none;color:var(--mute);transition:color .2s}
+.nav-links a:hover,.nav-links a:focus-visible{color:#fff}
+.saved-page>header{max-width:56rem;padding:clamp(2rem,6vw,4rem) clamp(1rem,5vw,3rem) 1rem}
+.saved-page>header h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1}
+.saved-page>header p{max-width:36rem;margin-top:.8rem;color:var(--mute)}
+.saved-page main{max-width:46rem}
+.saved-page form{display:none;scroll-margin-top:5rem}
+.saved-page form:target{display:block;animation:pop .5s ease-out}
+.saved-page main:not(:has(:target)) form:first-of-type{display:block}
+.face{position:relative;overflow:hidden;padding:1.5rem;background:var(--paper);border-radius:var(--r);box-shadow:0 0 0 .35rem var(--c),0 1.5rem 3rem -.5rem var(--c)}
+.face textarea{display:block;min-height:17rem;padding:2.8rem 1rem 1rem;font:1.25rem/1.6 "Yeseva One",Georgia,serif;text-align:center;color:var(--text);background:transparent;border:0;resize:none}
+.face textarea:focus{outline:2px dashed var(--c);outline-offset:-.4rem;box-shadow:none}
+.deco{position:absolute;top:.7rem;font-size:1.7rem}
+.d1{left:1rem}.d3{right:1rem}
+.d2{left:50%;margin-left:-.8rem;animation:float 3s ease-in-out infinite}
+.about,.share-section{margin-top:1.2rem;padding:1.2rem 1.5rem;background:var(--panel);border-radius:var(--r)}
+.about{color:var(--mute)}
+.about strong{font:1.2rem "Yeseva One",Georgia,serif;color:var(--ink)}
+.share-title{display:block;margin-bottom:.8rem;color:var(--mute)}
+.share-buttons{display:flex;flex-wrap:wrap;gap:.6rem}
+
+@media print{
+  .saved-page>nav,.saved-page>header,.about,.share-section,.saved-page>footer{display:none}
+  .face{box-shadow:none;border:3px solid var(--c)}
 }
