@@ -190,10 +190,6 @@ textarea:focus {
   cursor: pointer;
 }
 
-.save-btn:hover {
-  opacity: 0.9;
-}
-
 .share-section {
   margin: 1rem 0.4rem 0.4rem;
   padding-top: 0.9rem;
@@ -244,7 +240,7 @@ footer {
 }
 
 @media print {
-  nav, header, .box, .about, .share-section, .save-btn, .edit-btn, footer {
+  nav, header, .box, .about, .share-section, .save-btn, footer {
     display: none;
   }
   form {
@@ -289,36 +285,9 @@ body:not(.saved-page):has(option[value=republic]:checked) #republic {
   display: block;
 }
 
-/* Save Card: show the "your card" view (same page, so the edited text stays) */
-.share-section, .edit-btn, .f2 {
-  display: none;
-}
+/* Save Card: same page, so the edited text stays; only the view changes */
+.share-section, .f2 { display: none; }
 
-body:has(#saved:checked) .box,
-body:has(#saved:checked) h2,
-body:has(#saved:checked) .save-btn,
-body:has(#saved:checked) .f1 {
-  display: none;
-}
-
-body:has(#saved:checked) .share-section,
-body:has(#saved:checked) .f2 {
-  display: block;
-}
-
-body:has(#saved:checked) .edit-btn {
-  display: block;
-  margin: 0.8rem 0.4rem 0;
-  padding: 0.6rem;
-  text-align: center;
-  font-weight: bold;
-  color: var(--c);
-  border: 2px solid var(--c);
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-body:has(#saved:checked) form {
-  border-top: 0;
-  padding: 0.6rem;
-}
+body:has(#saved:checked) :is(.box, h2, .save-btn, .f1) { display: none; }
+body:has(#saved:checked) :is(.share-section, .f2) { display: block; }
+body:has(#saved:checked) form { border-top: 0; padding: 0.6rem; }
